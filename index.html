@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Harry Potter jQuery RPG Game</title>
+    <!-- Link Reset CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- Link Google Fonts "Crimson Text" and "Roboto" -->
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Roboto" rel="stylesheet">
+    <!-- Link font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <!-- Link Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- Link Customized CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!-- JavaScript-->
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</head>
+
+<body>
+    <!-- Overall Bootstrap Grid -->
+    <div class="container hogwarts">
+        <!-- Game Title -->
+        <div class="row">
+            <div class="col-12 text-center text-white my-5">
+                <h1 class="text-uppercase">
+                    Harry Potter 
+                </h1>
+            </div>
+        </div>
+        <!-- Select Your Main Character -->
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                    <p class="message-start">Select Your Main Character</p>
+            </div>
+        </div>
+        <!-- 4 Characters for a user to choose -->
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <!-- First Character -->
+                <div id="harry-potter" class="card mx-3 border border-secondary" style="width: 11rem;">
+                    <div class="card-body text-center">
+                        <h3 class="card-text"> Harry Potter</h3>
+                    </div>
+                    <img class="card-img-top" src="assets/images/img-harrypotter.jpg" alt="Harry Potter">
+                    <div class="card-body text-center">
+                        <p id="hp-harry-potter" class="card-text health-points" value="120">100</p>
+                    </div>
+                </div>
+                <!-- Second Character -->
+                <div id="hermione-granger" class="card mx-3 border border-secondary" style="width: 11rem;">
+                    <div class="card-body text-center">
+                        <h3 class="card-text ">Hermione Granger</h3>
+                    </div>
+                    <img class="card-img-top" src="assets/images/img-hermionegranger.jpg" alt="Hermione Granger">
+                    <div class="card-body text-center">
+                        <p id="hp-hermione" class="card-text health-points" value="120">120</p>
+                    </div>
+                </div>
+                <!-- Third Character -->
+                <div id="bellatrix-lestrange" class="card mx-3 border border-secondary" style="width: 11rem;">
+                    <div class="card-body text-center">
+                        <h3 class="card-text ">Bellatrix Lestrange</h3>
+                    </div>
+                    <img class="card-img-top" src="assets/images/img-BellatrixLestrange.jpg" alt="Bellatrix Lestrange">
+                    <div class="card-body text-center">
+                        <p id="hp-bellatrix" class="card-text health-points" value="150">150</p>
+                    </div>
+                </div>
+                <!-- Forth Character -->
+                <div id="lord-voldemort" class="card mx-3 border border-secondary" style="width: 11rem;">
+                    <div class="card-body text-center">
+                        <h3 class="card-text ">Lord Voldemort</h3>
+                    </div>
+                    <img class="card-img-top" src="assets/images/img-voldemort.jpg" alt="Lord Voldemort">
+                    <div class="card-body text-center">
+                        <p id="hp-voldemort" class="card-text health-points" value="180">180</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Enemies Available To Attack -->
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <p class="message-enemies">Enemies Available To Attack</p>
+            </div>
+        </div>
+        <!-- Your Main Character, Defender character -->
+        <div class="row">
+            <div id="main-character" class="col-6 d-flex justify-content-center">
+
+            </div>
+            <div id="defender-character" class="col-6 d-flex justify-content-center">
+
+            </div>
+        </div>
+        <!-- Attack Button -->
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <button id="attack" type="button" class="btn btn-light">
+                    Attack!
+                </button>
+            </div>
+
+
+        </div>
+        <!-- Game Messge and Restart Button -->
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <p class="output-message">Select Your Main Character</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <button id="restart" type="button" class="btn btn-light">
+                    Restart
+                </button>
+            </div>
+        </div>
+        <!-- Theme Song -->
+        <div class="row">
+            <div class="col-12 my-3">
+                <div id="musicControls" class="text-center">
+                    <button class="btn btn-default btn-xs theme-button">
+                        <span class="fa fa-music"></span> Play Theme!</button>
+                    <button class="btn btn-dark btn-xs pause-button">
+                        <span class="fa fa-pause"></span> Pause Song</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Container -->
+
+</body>
+
+</html>

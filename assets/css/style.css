@@ -1,0 +1,45 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+}
+
+h1 {
+    letter-spacing: 0.5rem;
+    font-size: 1.5rem;
+}
+h3 {
+    font-size: 1.1rem;
+}
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #333;
+    letter-spacing: 1.5px;
+}
+
+.hogwarts {
+    background-image: url(../images/img-hogwartscastle-far.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+}
+
+button {
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+
+}
+
+
+.output-message,
+.message-start,
+.message-emenies {
+    color: white;
+    text-shadow:5px 5px 10px black;
+}
+
+.card {
+    cursor: grab;
+}
+
