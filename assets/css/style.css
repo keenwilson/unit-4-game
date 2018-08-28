@@ -8,7 +8,7 @@ h1 {
     font-size: 1.5rem;
 }
 h3 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
 }
 p {
     font-family: 'Roboto', sans-serif;
@@ -17,11 +17,16 @@ p {
     letter-spacing: 1.5px;
 }
 
+.container {
+    width: 100%;
+}
+
 .hogwarts {
     background-image: url(../images/img-hogwartscastle-far.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
+    height: 760px;
 }
 
 button {
@@ -32,9 +37,8 @@ button {
 }
 
 
-.output-message,
-.message-start,
-.message-emenies {
+.game-message,
+#title-message {
     color: white;
     text-shadow:5px 5px 10px black;
 }
