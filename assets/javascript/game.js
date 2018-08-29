@@ -69,9 +69,10 @@ $(document).ready(function () {
                 readyToFight: "Keep Your Wand At The Ready!",
                 gameHasStarted: "The battle has started. Fight! Fight! Fight!",
                 findDefender: "Select The Enemy To Fight Against.",
-                nextDefender: "Select The Next Enemy To Fight",
+                nextDefender: "Well Done! Select The Next Enemy To Fight.",
                 noRepeatAttack: "The Battle Was Over! You’re Just As Sane As I Am!",
                 isHarryPotterKilled: "Oh my God, you've killed Harry Potter!",
+                restartGame: "It's A New Round. Pick Your Main Character."
             }
         };
     
@@ -257,6 +258,7 @@ $(document).ready(function () {
         $('#defender-character-card').addClass("collapse");
         $("#attack-button").addClass("collapse");
         $('#restart-button').addClass("collapse");
+        titleMessageDisplay.text(gameObject.messages.restartGame);
     });
 
 
