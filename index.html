@@ -27,18 +27,27 @@
         crossorigin="anonymous"></script>
     <!-- JavaScript-->
     <script type="text/javascript" src="assets/javascript/game.js"></script>
-
 </head>
 
 <body>
     <!-- Overall Bootstrap Grid -->
     <div class="container hogwarts">
-        <!-- Game Title -->
+        <!-- Header -->
         <div class="row">
-            <div class="col-12 text-center text-white my-5">
+            <div class="col-11 text-right text-white my-5">
+                <!-- Game Title -->
                 <h1 class="text-uppercase">
                     Harry Potter RPG
                 </h1>
+            </div>
+            <div class="col-1 my-3 d-flex justify-content-center align-self-center">
+                <!-- Theme Song -->
+                <div id="musicControls" class="btn-group text-center" role="group">
+                    <button class="btn btn-dark btn-xs theme-button">
+                        <span class="fa fa-music"></span></button>
+                    <button class="btn btn-dark btn-xs pause-button">
+                        <span class="fa fa-pause"></span></button>
+                </div>
             </div>
         </div>
 
@@ -72,26 +81,19 @@
                     </div>
                 </div>
             </div>
-
-        </div>
-
-        <!-- Game Messge and Restart Button -->
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-                <p class="game-message"></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-                <button id="restart-button" type="button" class="btn btn-light collapse">
-                    Restart
-                </button>
-            </div>
         </div>
         <!-- Title Message -->
         <div class="row">
-            <div class="col-12 d-flex justify-content-center">
+            <div class="mt-3 col-12 d-flex justify-content-center">
                 <p id="title-message">Select Your Main Character</p>
+            </div>
+        </div>
+        <!-- Restart Button -->
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <button id="restart-button" type="button" class="btn btn-light collapse restart">
+                    Restart
+                </button>
             </div>
         </div>
         <!-- 4 Characters for a user to choose -->
@@ -102,7 +104,7 @@
                     <div class="card-container justify-content-centerd-flex ">
                         <h3 class="card-text text-center">Harry Potter</h3>
                         <img class="card-img-top" src="assets/images/img-harrypotter.jpg" alt="Harry Potter" />
-                        <p id="hp-harry-potter" class="card-text hit-points" value="100">100</p>
+                        <p id="hp-harry-potter" class="card-text hit-points" value="120">120</p>
                     </div>
                 </button>
                 <!-- Second Character -->
@@ -110,7 +112,7 @@
                     <div class="card-container justify-content-centerd-flex ">
                         <h3 class="card-text text-center">Hermione Granger</h3>
                         <img class="card-img-top" src="assets/images/img-hermionegranger.jpg" alt="Hermione Granger" />
-                        <p id="hp-hermione" class="card-text hit-points" value="120">120</p>
+                        <p id="hp-hermione" class="card-text hit-points" value="110">110</p>
                     </div>
                 </button>
                 <!-- Third Character -->
@@ -118,7 +120,7 @@
                     <div class="card-container justify-content-centerd-flex ">
                         <h3 class="card-text text-center">Bellatrix Lestrange</h3>
                         <img class="card-img-top" src="assets/images/img-BellatrixLestrange.jpg" alt="Bellatrix Lestrange" />
-                        <p id="hp-bellatrix" class="card-text hit-points" value="150">150</p>
+                        <p id="hp-bellatrix" class="card-text hit-points" value="125">125</p>
                     </div>
                 </button>
                 <!-- Forth Character -->
@@ -126,23 +128,13 @@
                     <div class="card-container justify-content-centerd-flex ">
                         <h3 class="card-text text-center">Lord Voldemort</h3>
                         <img class="card-img-top" src="assets/images/img-voldemort.jpg" alt="Lord Voldemort" />
-                        <p id="hp-voldemort" class="card-text hit-points" value="180">180</p>
+                        <p id="hp-voldemort" class="card-text hit-points" value="175">175</p>
                     </div>
                 </button>
             </div>
         </div>
 
-        <!-- Theme Song -->
-        <div class="row">
-            <div class="col-12 my-3">
-                <div id="musicControls" class="text-center">
-                    <button class="btn btn-default btn-xs theme-button">
-                        <span class="fa fa-music"></span> Play Theme!</button>
-                    <button class="btn btn-dark btn-xs pause-button">
-                        <span class="fa fa-pause"></span> Pause Song</button>
-                </div>
-            </div>
-        </div>
+
     </div> <!-- End Container -->
 
 </body>
