@@ -131,7 +131,7 @@ $(document).ready(function () {
             isMainCharacterChosen = true;
             titleMessageDisplay.text(gameObject.messages.findDefender);
             // set yourCurrentAttackPower equal to the base attack power of the selected character
-            yourCurrentAttackPower = mainCharacter.attackPower;
+            yourCurrentAttackPower = mainCharacter.attackPower;     
         } else {
             // create a defender character and display on the screen
             renderDefenderCharacter(i);
@@ -153,9 +153,9 @@ $(document).ready(function () {
     });
 
     function checkIfDefenderIsChosen() {
+        console.log(isDefenderChosen, "isDefenderChosen");
         if (isDefenderChosen === true) {
-            return false;
-            console.log(isDefenderChosen, "isDefenderChosen");
+            return false;         
         } else {
             titleMessageDisplay.text(gameObject.messages.findDefender);
         }
@@ -163,13 +163,13 @@ $(document).ready(function () {
     
 
     function checkIfAttackWhenGameOver() {
+        console.log(isGameOver, "isGameOver");
         if (isGameOver === true) {
             // tell users not to click 'attack' once game is over
             titleMessageDisplay.text(gameObject.messages.noRepeatAttack);
             $('#restart-button').removeClass("collapse");
         } else {
             return false;
-            console.log(isGameOver, "isGameOver");
         }
     };
 
@@ -199,6 +199,22 @@ $(document).ready(function () {
         defenderCharacterHP.text(currentDefender.hitPoints);
         attackStatusUpdate = "You attacked " + currentDefender.name + "for " + yourCurrentAttackPower + " damage. " + currentDefender.name + " attacked you back for " + currentDefender.counterAttackPower + " damage.";
         titleMessageDisplay.text(attackStatusUpdate);
+        animateHP();
+    };
+
+    function animateHP() {
+        setTimeout(removeJello, 10);
+        setTimeout(addJello, 20);
+
+        function removeJello() {
+            mainCharacterHP.removeClass("jello");
+            defenderCharacterHP.removeClass("jello");
+        };
+
+        function addJello() {
+            mainCharacterHP.addClass("jello");
+            defenderCharacterHP.addClass("jello");
+        };
     };
 
     function checkLastDefender() {
@@ -211,11 +227,6 @@ $(document).ready(function () {
     };
 
     function reviewAttackResult() {
-
-        console.log(mainCharacter.hitPoints, "main HP");
-        console.log(currentDefender.hitPoints, "defender hp");
-        console.log(isLastDefender, "if last defender");
-
         if (mainCharacter.hitPoints >= 0) {
             // You still have some HPs.
             if (currentDefender.hitPoints <= 0) {
@@ -248,8 +259,7 @@ $(document).ready(function () {
         };
     }   
 
-
-
+    
    // Add an event listener 'click' to 'restart' button
     $('#restart-button').on('click', function () {
         gameSetUp();
@@ -281,7 +291,6 @@ $(document).ready(function () {
     var audioAttack = document.createElement("AUDIO");
     audioAttack.setAttribute("src", "assets/audio/audio-magic_wand_whoosh.mp3");
 
-
-
-
 }); // End Document.ready
+
+  
