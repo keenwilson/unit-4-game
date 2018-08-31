@@ -1,5 +1,8 @@
 # Harry Potter RPG
-A web-based jQuery game of which theme has been adapted from *Star Wars RPG* to *Harry Potter RPG*.
+
+A web-based jQuery role-playing game (RPG) where the user can control a fictional character from *Harry Potter*.
+
+This  game utilizes jQuery to show the user player choices, and let the user pick their player and another player to fight. The user can attack their enemy, and their enemy attacks in return. When health is zero or below for either player, the other player wins.
 
 ## How the app works
 
