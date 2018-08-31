@@ -37,22 +37,22 @@ $(document).ready(function () {
                 {
                     name: "Harry Potter",
                     visual: "assets/images/img-harrypotter.jpg",
-                    hitPoints: 120,
-                    attackPower: 17,
+                    hitPoints: 125,
+                    attackPower: 25,
                     counterAttackPower: 15
                 },
                 {
                     name: "Hermione Granger",
                     visual: "assets/images/img-hermionegranger.jpg",
-                    hitPoints: 110,
-                    attackPower: 25,
+                    hitPoints: 115,
+                    attackPower: 27,
                     counterAttackPower: 17
                 },
                 {
                     name: "Bellatrix Lestrange",
                     visual: "assets/images/img-BellatrixLestrange.jpg",
-                    hitPoints: 125,
-                    attackPower: 27,
+                    hitPoints: 130,
+                    attackPower: 23,
                     counterAttackPower: 19
                 },
                 {
@@ -72,10 +72,11 @@ $(document).ready(function () {
                 nextDefender: "Well Done! Select The Next Enemy To Fight.",
                 noRepeatAttack: "The Battle Was Over! You’re Just As Sane As I Am!",
                 isHarryPotterKilled: "Oh my God, you've killed Harry Potter!",
+                welcomeToGame: "Welcome to Hogwarts. Pick Your Main Character To Fight",
                 restartGame: "It's A New Round. Pick Your Main Character."
             }
         };
-    
+        titleMessageDisplay.text(gameObject.messages.welcomeToGame);
     };
 
     window.onload = gameSetUp();
@@ -131,7 +132,7 @@ $(document).ready(function () {
             isMainCharacterChosen = true;
             titleMessageDisplay.text(gameObject.messages.findDefender);
             // set yourCurrentAttackPower equal to the base attack power of the selected character
-            yourCurrentAttackPower = mainCharacter.attackPower;     
+            yourCurrentAttackPower = mainCharacter.attackPower;  
         } else {
             // create a defender character and display on the screen
             renderDefenderCharacter(i);
@@ -153,7 +154,6 @@ $(document).ready(function () {
     });
 
     function checkIfDefenderIsChosen() {
-        console.log(isDefenderChosen, "isDefenderChosen");
         if (isDefenderChosen === true) {
             return false;         
         } else {
@@ -163,7 +163,6 @@ $(document).ready(function () {
     
 
     function checkIfAttackWhenGameOver() {
-        console.log(isGameOver, "isGameOver");
         if (isGameOver === true) {
             // tell users not to click 'attack' once game is over
             titleMessageDisplay.text(gameObject.messages.noRepeatAttack);
@@ -176,12 +175,11 @@ $(document).ready(function () {
     function checkIfAttackWhenRoundwin() {
         if (isRoundWin === true) {
             titleMessageDisplay.text(gameObject.messages.nextDefender);
-            console.log(isRoundWin, "isRoundWin", gameObject.messages.nextDefender);
         } else {
-            console.log(isRoundWin, "isRoundWin");
             audioAttack.play();
             calculateDamage();
             displayDamage();
+            slowlyIncreaseAttackPower();
             checkLastDefender();
             reviewAttackResult();
         }
@@ -190,9 +188,9 @@ $(document).ready(function () {
     function calculateDamage() {
         mainCharacter.hitPoints -= currentDefender.counterAttackPower;
         currentDefender.hitPoints -= yourCurrentAttackPower;
-        // Every time you attack, it slowly increases your attack power.
-        yourCurrentAttackPower += mainCharacter.attackPower;
     };
+
+ 
 
     function displayDamage() {
         mainCharacterHP.text(mainCharacter.hitPoints);
@@ -201,6 +199,11 @@ $(document).ready(function () {
         titleMessageDisplay.text(attackStatusUpdate);
         animateHP();
     };
+
+    function slowlyIncreaseAttackPower() {
+        // Every time you attack, it slowly increases your attack power.
+        yourCurrentAttackPower += mainCharacter.attackPower;
+    }
 
     function animateHP() {
         setTimeout(removeJello, 10);
@@ -259,6 +262,8 @@ $(document).ready(function () {
         };
     }   
 
+
+
     
    // Add an event listener 'click' to 'restart' button
     $('#restart-button').on('click', function () {
@@ -271,7 +276,16 @@ $(document).ready(function () {
         titleMessageDisplay.text(gameObject.messages.restartGame);
     });
 
-
+   // Add an event listener 'click' to 'reload' button
+    $('.reload-button').on('click', function () {
+        gameSetUp();
+        $('.character-button').removeClass("collapse");
+        $('#main-character-card').addClass("collapse");
+        $('#defender-character-card').addClass("collapse");
+        $("#attack-button").addClass("collapse");
+        $('#restart-button').addClass("collapse");
+        titleMessageDisplay.text(gameObject.messages.welcomeToGame);
+    });
 
 
 
