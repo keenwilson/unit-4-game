@@ -37,30 +37,30 @@ $(document).ready(function () {
                 {
                     name: "Harry Potter",
                     visual: "assets/images/img-harrypotter.jpg",
-                    hitPoints: 125,
+                    hitPoints: 130,
                     attackPower: 25,
-                    counterAttackPower: 15
+                    counterAttackPower: 17
                 },
                 {
                     name: "Hermione Granger",
                     visual: "assets/images/img-hermionegranger.jpg",
-                    hitPoints: 115,
-                    attackPower: 27,
-                    counterAttackPower: 17
+                    hitPoints: 125,
+                    attackPower: 24,
+                    counterAttackPower: 21
                 },
                 {
                     name: "Bellatrix Lestrange",
                     visual: "assets/images/img-BellatrixLestrange.jpg",
-                    hitPoints: 130,
-                    attackPower: 23,
-                    counterAttackPower: 19
+                    hitPoints: 135,
+                    attackPower: 18,
+                    counterAttackPower: 18
                 },
                 {
                     name: "Lord Voldemort",
                     visual: "assets/images/img-voldemort.jpg",
-                    hitPoints: 175,
-                    attackPower: 18,
-                    counterAttackPower: 21
+                    hitPoints: 145,
+                    attackPower: 19,
+                    counterAttackPower: 19
                 }],
             messages: {
                 // Create messages for varios situations
@@ -186,8 +186,12 @@ $(document).ready(function () {
     };
 
     function calculateDamage() {
+
         mainCharacter.hitPoints -= currentDefender.counterAttackPower;
+        console.log(yourCurrentAttackPower, " yourCurrentAttackPower");
         currentDefender.hitPoints -= yourCurrentAttackPower;
+
+
     };
 
  
