@@ -6,11 +6,10 @@ This  game utilizes jQuery to show the user player choices, and let the user pic
 
 ## How the app works
 
-* When game starts, there will be four characters on screen. You can pick *your main character* to fight by clicking on the character's picture. You will fight as that character for the rest of the game.
+* This  game utilizes jQuery to show the user character choices, and let the user pick their *main character* and *an opponent* to fight by clicking on their pictures.
 
-* The remainders will become enemies that you have to defeat. You choose *an opponent* by clicking on an enemy's picture.
+* The user will fight as that main character for the rest of the game. The user can attack their opponent, and their opponent attacks in return.
 
-* The goal of the game is to **defeat all the enemies by fighting them**. 
-    *When we fight them, your goal is to reduce their HP (hit points) to *zero or below*.
-    *At any point if your HP is reduced to *zero or below*, you lose.
+* The goal of the game is to defeat all the enemies by fighting them and reducing their HP (hit points) to **zero or below**. At any point if the user's HP is reduced to *zero or below*, the user loses.
+
 
