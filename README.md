@@ -1,6 +1,5 @@
 # Harry Potter RPG
 
----
 A web-based jQuery role-playing game (RPG) where the user can control a fictional character from *Harry Potter*. This  game utilizes jQuery to show the user player choices, and let the user pick their player and another player to fight. The user can attack their enemy, and their enemy attacks in return. When health is zero or below for either player, the other player wins.
 
  [Click to Play](https://keenwilson.github.io/unit-4-game/ "Harry Potter RPG")
@@ -26,7 +25,11 @@ A web-based jQuery role-playing game (RPG) where the user can control a fictiona
 ## Technical Approach
 * Create a clean modern-looking layout with `HTML5` and `CSS Bootstrap` framework
 * Use variables, arrays, loops, and conditionals in `JavaScript` to create a simple word guessing game
-* Use the `document.onkeyup()` function to collect input from the user's keyboard
+* Use `JavaScript Switch Statement` to create different character cards based on user's selection
+* Add an event listener `.on('click')` to an attack button to run game functions
+* Use the Bootstrap's `collapse Javascript plugin` to toggle the visibility of character cards
+* Use the `document.createElement()` method to creat audio elements for a theme song and an attack sound effect
+
 
 ---
 ## Author
