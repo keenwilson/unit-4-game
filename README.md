@@ -34,6 +34,6 @@ A web-based jQuery role-playing game (RPG) where the user can control a fictiona
 ---
 ## Author
 
-[Keen Wilson](https://github.com/keenwilson/keenwilson.github.io "Keen Wilson's Portfolio")
+[Keen Wilson](https://keenwilson.github.io/ "Keen Wilson's Portfolio")
 
 
